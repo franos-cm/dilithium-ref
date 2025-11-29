@@ -32,7 +32,7 @@ int crypto_sign_keypair(uint8_t *pk, uint8_t *sk) {
   randombytes(seedbuf, SEEDBYTES);
   seedbuf[SEEDBYTES+0] = K;
   seedbuf[SEEDBYTES+1] = L;
-  shake256(seedbuf, 2*SEEDBYTES + CRHBYTES, seedbuf, SEEDBYTES+2);
+  shake256(seedbuf, 2*SEEDBYTES + CRHBYTES, seedbuf, SEEDBYTES);
   rho = seedbuf;
   rhoprime = rho + SEEDBYTES;
   key = rhoprime + CRHBYTES;
